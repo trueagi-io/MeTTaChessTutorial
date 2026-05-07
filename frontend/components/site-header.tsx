@@ -41,7 +41,7 @@ export function SiteHeader() {
         window.dispatchEvent(new CustomEvent("atomspace_state_updated", { detail: program }))
         window.dispatchEvent(new CustomEvent("board_state_updated", { detail: INITIAL_BOARD_STATE }))
       }
-      alert("Now running default MeTTa chess program.")
+      alert("Now running default MeTTa chess program. Limitations: Castling, pawn promotion, and en passant captures are not yet supported.")
       setAtomspaceEmpty(false)
     } catch (err) {
       console.error(err)
