@@ -1,4 +1,4 @@
-# MeTTa Chess Tutorial (Frontend)
+# MeTTa Chess Tutorial 
 
 To run the MeTTa Chess Tutorial on your machine follow these steps:
 
