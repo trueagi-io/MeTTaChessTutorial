@@ -12,11 +12,14 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/api/:path*",
-        //destination: "http://127.0.0.1:5001/:path*",
-        destination: "http://69.169.108.141:5001/:path*",
-        //destination: "https://mwj-latest.onrender.com/:path*",
+        source: "/api/metta",
+        destination: "http://backend:5001/metta",
       },
+      {
+        source: "/api/metta_stateless",
+        destination: "http://backend:5001/metta_stateless",
+      }
+
     ]
   },
 }

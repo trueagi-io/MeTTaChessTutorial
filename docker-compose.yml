@@ -1,0 +1,44 @@
+services:
+  backend:
+    image: trueagi/mwj:amd64
+    container_name: backend
+    command: stateless_only
+    pull_policy: always
+    user: "65534:65534"
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 512M
+          pids: 128
+    networks:
+      - backend-isolated
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: metta-frontend
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
+    networks:
+      - backend-isolated
+      - frontend-public
+    restart: unless-stopped
+
+networks:
+  backend-isolated:
+    driver: bridge
+    internal: true
+  frontend-public:
+    driver: bridge
+
+

@@ -1,20 +1,10 @@
-# MeTTa Chess Tutorial (Frontend)
+# MeTTa Chess Tutorial 
 
-This repo hosts a Next.js frontend for a MeTTa-based chess tutorial. The app proxies API calls through Next.js rewrites (see `frontend/next.config.mjs`) to the MettaWamJam Prolog MeTTa backend server running PeTTa. This server needs to be started independently.
+To run the MeTTa Chess Tutorial on your machine follow these steps:
 
-Required:  Node.js and pnpm
-
-Start Server Development:
-1) `cd frontend`
-2) `pnpm install`
-3) `pnpm dev` (starts front end) — ensure your backend is reachable at the rewrite destination.
-
-Start Server Production:
-1) `cd frontend`
-2) `pnpm install`
-3) `pnpm build`
-3) `pnpm start` (starts front end) — ensure your backend is reachable at the rewrite destination.
-
-Notes:
-- API base is `/api` (set in `frontend/lib/constants.ts`), with rewrites to the backend MettaWamJam server location defined in `frontend/next.config.mjs`. 
-- User's browser retains all atomspace related state information. MettaWamJam is called using the metta_stateless transaction and does not retain state.
+1) Install Docker if not yet installed
+2) `git clone https://github.com/trueagi-io/MeTTaChessTutorial.git`
+3) `cd MeTTaChessTutorial`
+4) `docker compose up -d`
+5) Start tutorial by opening your browser and enter `http://localhost:3000/`
+6) When you are done, `docker compose stop` 
